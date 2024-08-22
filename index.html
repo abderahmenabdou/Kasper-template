@@ -15,9 +15,9 @@
       <div class="container">
         <!-- START HEADER -->
         <header>
-          <img src="./images/logo.png" alt="logo" />
-          <div class="navig">
-            <nav>
+          <img decoding="async" src="./images/logo.png" alt="logo" />
+          <div class="navbar">
+            <nav class="hidden">
               <a class="active" href="#home">home</a>
               <a href="#services">services</a>
               <a href="#portfolio">portfolio</a>
@@ -25,7 +25,15 @@
               <a href="#pricing">pricing</a>
               <a href="#contact">contact</a>
             </nav>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="menu">
+              <span class="bar"><i class="fa-solid fa-bars"></i></span>
+              <span class="close hidden"
+                ><i class="fa-solid fa-xmark"></i
+              ></span>
+              <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
           </div>
         </header>
         <!-- END HEADER -->
@@ -33,10 +41,10 @@
       <!-- START LANDING -->
       <main>
         <img class="active" src="./images/1.jpg" alt="landing" />
-        <img src="./images/2.jpg" alt="landing" />
-        <img src="./images/3.jpg" alt="landing" />
-        <img src="./images/4.jpg" alt="landing" />
-        <img src="./images/5.jpg" alt="landing" />
+        <img decoding="async" src="./images/2.jpg" alt="landing" />
+        <img decoding="async" src="./images/3.jpg" alt="landing" />
+        <img decoding="async" src="./images/4.jpg" alt="landing" />
+        <img decoding="async" src="./images/5.jpg" alt="landing" />
         <div class="content">
           <div class="container">
             <h2>
@@ -46,8 +54,8 @@
             <p>
               Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
               Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-              Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem.
-              Mauris blandit aliquet elit, eget tincidunt.
+              Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at
+              sem. Mauris blandit aliquet elit, eget tincidunt.
             </p>
           </div>
         </div>
@@ -55,13 +63,25 @@
           <i id="previous" class="fa-solid fa-angle-left"></i>
           <i id="next" class="fa-solid fa-angle-right"></i>
         </div>
-        <ul class="bullet">
-          <li class="active"></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <div class="bullet">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="social">
+          <a href="https://www.facebook.com/itachi.web.7" target="_blank"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/abderahmen_etm/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://x.com/AbderahmenAbdo9" target="_blank"
+            ><i class="fa-brands fa-square-x-twitter"></i
+          ></a>
+        </div>
       </main>
       <!-- END LANDING -->
     </div>
@@ -71,10 +91,13 @@
       <div class="container">
         <div class="head">
           <h2>services</h2>
-          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt. </p>
-    </section>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
         </div>
       </div>
+    </section>
     <!-- END SERVICES -->
     <script src="main.js"></script>
   </body>

@@ -26,53 +26,118 @@ header {
   border-bottom: 1px solid var(--first-color);
   position: relative;
   z-index: 999;
+  padding-block: 25px;
 }
-.navig {
+header .navbar {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav {
-  height: 6rem;
-  line-height: 6rem;
 }
 
-nav a {
+header .navbar nav a {
   text-decoration: none;
-  padding-right: 1.5rem;
-  text-transform: capitalize;
   color: var(--first-color);
+  margin-right: 20px;
+  text-transform: capitalize;
   position: relative;
-  font-size: 0.9rem;
 }
 
-nav a.active {
+header .navbar nav a:last-child {
+  margin-right: 0px;
+}
+header .navbar nav a.active {
   color: var(--main-color);
 }
-
-nav a::before {
+header .navbar nav a:hover {
+  color: var(--main-color);
+}
+header .navbar nav a::before {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 30px;
   width: 0;
   height: 3px;
   background-color: var(--main-color);
-  transition: width 0.2s linear;
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  transition: 0.2s ease-in-out;
 }
-nav a:hover::before {
-  width: calc(100% - 1.5rem);
+header .navbar nav a:hover::before {
+  width: 100%;
+}
+header .navbar .menu span {
+  display: none;
 }
 
-nav a:hover {
-  color: var(--main-color);
+header .navbar .search {
+  border-left: 1px solid var(--first-color);
+  padding-inline: 15px;
+  margin-left: 25px;
 }
 
-.navig i {
+header .navbar .search i {
   color: var(--first-color);
-  font-size: 1.5rem;
-  padding-left: 1.5rem;
-  border-left: 1px solid;
+  font-size: 16px;
+}
+
+@media (max-width: 901px) {
+  .container {
+    margin: 0 2rem;
+  }
+  header {
+    display: block;
+    position: relative;
+  }
+  header .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  header .navbar nav {
+    position: absolute;
+    top: 100%;
+    margin-top: 20px;
+    width: 100%;
+    background-color: gray;
+    border-radius: 10px;
+    z-index: 999;
+  }
+  header .navbar nav.hidden {
+    display: none;
+  }
+  header .navbar nav a {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+  }
+  header .navbar nav a:hover::before {
+    width: 0;
+  }
+  header .navbar nav a:not(:last-child) {
+    border-bottom: 1px solid var(--first-color);
+  }
+  header .navbar .menu {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    display: flex;
+  }
+  header .navbar .menu span {
+    display: block;
+    color: var(--first-color);
+    font-size: 25px;
+    cursor: pointer;
+  }
+  header .navbar .menu .close {
+    font-size: 30px;
+  }
+  header .navbar .menu .search {
+    line-height: 42px;
+  }
+  header .navbar .menu .search i {
+    font-size: 25px;
+  }
+  header .navbar .menu .hidden {
+    display: none;
+  }
 }
 
 main::before {
@@ -107,7 +172,7 @@ main .content {
   position: absolute;
   top: 12rem;
   opacity: 0.85;
-  z-index: 999;
+  z-index: 555;
 }
 
 main .content h2 {
@@ -158,7 +223,7 @@ main .content p {
   transform: translateX(-50%);
   z-index: 999;
 }
-.bullet li {
+.bullet span {
   width: 1rem;
   height: 1rem;
   border: 1px solid var(--first-color);
@@ -167,15 +232,59 @@ main .content p {
   cursor: pointer;
 }
 
-.bullet li.active {
-  width: 2rem;
-  height: 0.8rem;
+.bullet span.active {
+  width: 1.5rem;
+  height: 0.5rem;
   border-radius: 0.5rem;
   background-color: var(--first-color);
   transition: all 0.3s linear;
 }
 
-.services {
-  padding-top: 10rem;
-  background-color: blueviolet;
+.social {
+  position: absolute;
+  right: 8rem;
+  top: 40%;
+  transform: translateX(-50%);
+  z-index: 555;
+}
+
+.social a {
+  display: block;
+  margin-block: 1.5rem;
+  text-decoration: none;
+}
+
+.social a i {
+  color: var(--main-color);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 901px) {
+  main .content {
+    width: 100%;
+  }
+  main .content h2 {
+    font-size: 25px;
+  }
+  main .content p {
+    font-size: 18px;
+  }
+  .icon i {
+    font-size: 1.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+  }
+  .social {
+    top: auto;
+    bottom: 2%;
+    right: 1rem;
+  }
+  .social a {
+    margin-block: 0.5rem;
+  }
+  .social a i {
+    color: var(--first-color);
+  }
 }

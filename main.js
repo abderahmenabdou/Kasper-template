@@ -1,5 +1,5 @@
 let slideImages = Array.from(document.querySelectorAll("main img"));
-let bullets = Array.from(document.querySelectorAll(".bullet li"));
+let bullets = Array.from(document.querySelectorAll(".bullet span"));
 let previous = document.getElementById("previous");
 let next = document.getElementById("next");
 let current = 1;
@@ -47,3 +47,20 @@ function removeAll() {
 }
 
 updateImage();
+
+document.addEventListener("DOMContentLoaded", function () {
+  let bar = document.querySelector(".bar");
+  let closed = document.querySelector(".close");
+  let navBar = document.querySelector("nav");
+
+  bar.addEventListener("click", () => {
+    bar.classList.toggle("hidden");
+    closed.classList.toggle("hidden");
+    navBar.classList.toggle("hidden");
+  });
+  closed.addEventListener("click", () => {
+    bar.classList.toggle("hidden");
+    closed.classList.toggle("hidden");
+    navBar.classList.toggle("hidden");
+  });
+});
