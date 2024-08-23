@@ -2,23 +2,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 :root {
   --main-color: #00c7fc;
   --first-color: white;
   --second-color: #14677e;
+  --third-color: #777;
 }
-
+/* START RULES*/
 .container {
   margin: 0 7rem;
 }
 
+/* END RULES */
+
+/* START LANDING PAGE */
 .landing {
   position: relative;
   height: 100vh;
   width: 100%;
 }
-
+/* START HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -77,8 +82,10 @@ header .navbar .search i {
   color: var(--first-color);
   font-size: 16px;
 }
+/* END HEADER */
 
-@media (max-width: 901px) {
+/* START RESPONSIVE HEADER */
+@media (max-width: 991px) {
   .container {
     margin: 0 2rem;
   }
@@ -139,7 +146,9 @@ header .navbar .search i {
     display: none;
   }
 }
+/* END RESOPNSIVE HEADER */
 
+/* START MAIN */
 main::before {
   content: "";
   width: 100%;
@@ -163,7 +172,6 @@ main img {
 main img.active {
   opacity: 1;
 }
-
 main .content {
   padding-top: 2rem;
   width: 40rem;
@@ -174,7 +182,6 @@ main .content {
   opacity: 0.85;
   z-index: 555;
 }
-
 main .content h2 {
   color: var(--first-color);
   text-transform: capitalize;
@@ -259,8 +266,10 @@ main .content p {
   font-size: 2rem;
   font-weight: bold;
 }
+/* END MAIN */
 
-@media (max-width: 901px) {
+/* START RESPONSIVE MAIN */
+@media (max-width: 768px) {
   main .content {
     width: 100%;
   }
@@ -288,3 +297,139 @@ main .content p {
     color: var(--first-color);
   }
 }
+/* END RESPONSIVE MAIN */
+
+/* END LANDING PAGE */
+
+/* START SERVICESE SECTION */
+.services {
+  padding: 100px 0;
+}
+.services .head {
+  text-align: center;
+  width: 550px;
+  margin: 0 auto;
+}
+.services .head h2 {
+  width: fit-content;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: auto;
+  letter-spacing: 1px;
+}
+
+.services .head .circle {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+.services .head .circle::before,
+.services .head .circle::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  top: 4px;
+  background-color: black;
+}
+.services .head .circle::before {
+  left: -62px;
+}
+.services .head .circle::after {
+  right: -62px;
+}
+
+.services .head p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--third-color);
+}
+
+.services-content {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  gap: 20px;
+}
+
+.services-content .card {
+  display: flex;
+}
+.services-content .card .card-icon {
+  margin-right: 33px;
+}
+.services-content .card .card-icon i {
+  font-size: 50px;
+}
+.services-content .card .card-text {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+.services-content .card .card-text h3 {
+  color: var(--main-color);
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.services-content .card .card-text p {
+  color: var(--third-color);
+}
+/* START MEDIA QUERY */
+@media (max-width: 991px) {
+  .services-content {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+  .services .head {
+    width: 100%;
+  }
+  .services-content .card {
+    display: block;
+    text-align: center;
+  }
+  .services-content .card .card-text {
+    margin-top: 20px;
+  }
+}
+/* END MEDIA QUERY */
+
+/* END SERVICESE SECTION */
+
+/* START DESIGN SECTION */
+.design {
+  background-image: url(./images/design-features.jpg);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.design::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.design .image {
+  width: 338px;
+  height: 462px;
+  position: absolute;
+  top: 280px;
+  left: 200px;
+}
+.design .content {
+  padding-top: 2rem;
+  width: 40rem;
+  height: 22rem;
+  background-color: var(--second-color);
+  position: absolute;
+  top: 10rem;
+  right: 0;
+  opacity: 0.85;
+  z-index: 555;
+}
+/* END DESIGN SECTION */
