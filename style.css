@@ -15,6 +15,50 @@
   margin: 0 7rem;
 }
 
+section .head {
+  text-align: center;
+  width: 550px;
+  margin: 0 auto;
+}
+section .head h2 {
+  width: fit-content;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: auto;
+  letter-spacing: 1px;
+}
+
+section .head .circle {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+section .head .circle::before,
+section .head .circle::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  top: 4px;
+  background-color: black;
+}
+section .head .circle::before {
+  left: -62px;
+}
+section .head .circle::after {
+  right: -62px;
+}
+
+section.head p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--third-color);
+}
+
 /* END RULES */
 
 /* START LANDING PAGE */
@@ -149,16 +193,6 @@ header .navbar .search i {
 /* END RESOPNSIVE HEADER */
 
 /* START MAIN */
-main::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
 main img {
   position: absolute;
   top: 0;
@@ -302,15 +336,15 @@ main .content p {
 /* END LANDING PAGE */
 
 /* START SERVICESE SECTION */
-.services {
+section {
   padding: 100px 0;
 }
-.services .head {
+section .head {
   text-align: center;
   width: 550px;
   margin: 0 auto;
 }
-.services .head h2 {
+section .head h2 {
   width: fit-content;
   font-size: 30px;
   text-transform: uppercase;
@@ -318,7 +352,7 @@ main .content p {
   letter-spacing: 1px;
 }
 
-.services .head .circle {
+section .head .circle {
   display: block;
   width: 15px;
   height: 15px;
@@ -327,8 +361,8 @@ main .content p {
   margin: 0 auto;
   position: relative;
 }
-.services .head .circle::before,
-.services .head .circle::after {
+section .head .circle::before,
+section .head .circle::after {
   content: "";
   position: absolute;
   width: 60px;
@@ -336,14 +370,14 @@ main .content p {
   top: 4px;
   background-color: black;
 }
-.services .head .circle::before {
+section .head .circle::before {
   left: -62px;
 }
-.services .head .circle::after {
+section .head .circle::after {
   right: -62px;
 }
 
-.services .head p {
+section.head p {
   margin-top: 20px;
   font-size: 18px;
   color: var(--third-color);
@@ -383,7 +417,7 @@ main .content p {
   .services-content {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
-  .services .head {
+  section .head {
     width: 100%;
   }
   .services-content .card {
@@ -415,21 +449,101 @@ main .content p {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .design .image {
-  width: 338px;
+  width: 40%;
   height: 462px;
+  text-align: center;
   position: absolute;
-  top: 280px;
-  left: 200px;
+  top: 45%;
 }
 .design .content {
   padding-top: 2rem;
-  width: 40rem;
-  height: 22rem;
+  width: 60%;
+  height: 24rem;
   background-color: var(--second-color);
   position: absolute;
   top: 10rem;
   right: 0;
   opacity: 0.85;
   z-index: 555;
+  padding: 50px;
 }
+
+.design .content h3 {
+  text-transform: capitalize;
+  color: var(--first-color);
+  font-size: 25px;
+}
+.design .content .text {
+  margin-top: 50px;
+}
+
+.design .content .text div {
+  color: var(--first-color);
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.design .content .text div i {
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 767px) {
+  .design .image {
+    display: none;
+  }
+  .design .content {
+    width: 100%;
+  }
+}
+
 /* END DESIGN SECTION */
+
+/* START PORTFOLIO SECTION */
+.gallery {
+  padding-top: 100px;
+}
+
+.gallery .btn {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.gallery .btn span {
+  width: fit-content;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.gallery .btn span.active {
+  background-color: var(--main-color);
+}
+.gallery .images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.gallery .images img {
+  width: 100%;
+}
+
+.botton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+.botton button {
+  padding: 15px 30px;
+  background-color: var(--main-color);
+  color: var(--first-color);
+  text-transform: capitalize;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* END PORTFOLIO SECTION */
