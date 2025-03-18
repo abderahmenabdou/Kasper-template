@@ -306,6 +306,8 @@ main .content p {
 @media (max-width: 768px) {
   main .content {
     width: 100%;
+    padding-top: 0.8rem;
+    top: 9rem;
   }
   main .content h2 {
     font-size: 25px;
@@ -488,8 +490,43 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
-.gallery .images img {
+
+
+.gallery .images .box{
+  overflow: hidden;
+  position: relative;
+  
+}
+.gallery .images .box img {
   width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.gallery .images .box:hover img{
+  transform: rotate(4deg) scale(1.1);
+  
+}
+
+.gallery .images .box .caption {
+  position: absolute;
+  left: 0;
+  padding: 10px 20px;
+  background-color: white;
+  width: 100%;
+  transition: 0.3s;
+  bottom: -100%;
+}
+.gallery .images .box .caption h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.gallery .images .box .caption p {
+  color: var(--main-color);
+}
+.gallery .images .box:hover .caption{
+  bottom: 0;
+  
 }
 
 .botton {
@@ -573,26 +610,27 @@ section {
   height: 100vh;
 }
 .laptop {
-  position: absolute;
-  width: 100%;
+  margin-top: 10%;
   text-align: center;
-  top: 60%;
-  z-index: -1;
+}
+.laptop img{
+  max-width: 100%;
 }
 
-/* END ABOUT SECTION */
+/* START NUMBER */
 
-/* START NUMBER SECTION */
 .number {
   background-image: url("./images/stats.png");
   position: relative;
+  top: -25%;
+  padding: 80px 0;
 }
 .number::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   top: 0;
   left: 0;
 }
@@ -644,4 +682,18 @@ section {
     margin-bottom: 60px;
   }
 }
-/* END NUMBER SECTION */
+/* END NUMBER */
+
+/* START TESTIMONIALS*/
+.testi-skills{
+display: flex;
+}
+
+.testi-skills .head{
+  text-transform: uppercase;
+  }
+/* END TESTIMONIALS*/
+
+/* END ABOUT SECTION */
+
+
