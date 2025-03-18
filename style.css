@@ -672,8 +672,8 @@ section {
 
 @media (max-width: 767px) {
    .number {
-    top: -15%;
-    padding: 60px 0;
+    top: -20%;
+    padding: 50px 0;
   }
   .state {
     flex-direction: column;
